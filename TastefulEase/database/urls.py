@@ -9,6 +9,7 @@ router.register('categories', CategoryApi)
 router.register('menu_items', MenuItemApi)
 router.register('orders', OrderApi)
 router.register('order_items', OrderItemApi)
+router.register('make_order', MakeOrderApi)
 
 urlpatterns = [
     path('', include(router.urls)),
