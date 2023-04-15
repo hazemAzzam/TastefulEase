@@ -39,6 +39,7 @@
             this.container = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -47,6 +48,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(23)))));
+            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
@@ -64,7 +66,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(236, 111);
+            this.pictureBox1.Size = new System.Drawing.Size(236, 123);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -74,7 +76,7 @@
             this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(3, 187);
+            this.button2.Location = new System.Drawing.Point(0, 196);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(230, 50);
             this.button2.TabIndex = 1;
@@ -88,7 +90,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(3, 117);
+            this.button1.Location = new System.Drawing.Point(3, 129);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(230, 50);
             this.button1.TabIndex = 0;
@@ -169,6 +171,18 @@
             this.panel3.Size = new System.Drawing.Size(562, 17);
             this.panel3.TabIndex = 6;
             // 
+            // button4
+            // 
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button4.Location = new System.Drawing.Point(3, 266);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(230, 50);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "My Payments";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -204,5 +218,6 @@
         private Panel panel3;
         private Button button3;
         private PictureBox pictureBox1;
+        private Button button4;
     }
 }

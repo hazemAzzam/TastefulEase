@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OhP26ULhTGqtOVD+CmLZoIgAkeEGxm6B1q/S0Nk0RYHFziVE7d77sxIscN6teINFyEwx12Nz51XIJQPfQKg56Q==",
+  "dgSpecHash": "zwkq0pTUx3fbejf5Y3P22sbk0YFm1qZM4S4rK78RtHK8YNZrp79RmV7K5mE9TaVEV7E+VABeCWF1JMjhU8ZiZA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hazem\\source\\repos\\TastefulEase\\Desktop\\TestefulEase\\TestefulEase\\TestefulEase.csproj",
+  "projectFilePath": "C:\\Users\\hazem\\source\\repos\\TastefulEase\\Django\\TestefulEase - Desktop\\TestefulEase\\TestefulEase.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hazem\\.nuget\\packages\\flurl\\3.0.6\\flurl.3.0.6.nupkg.sha512",
     "C:\\Users\\hazem\\.nuget\\packages\\flurl.http\\3.2.4\\flurl.http.3.2.4.nupkg.sha512",

@@ -4,12 +4,12 @@ from .api import *
 
 router = routers.DefaultRouter()
 router.register('customers', CustomerApi)
-router.register('delivery_addresses', DeliveryAddressesApi)
+router.register('delivery-addresses', DeliveryAddressesApi)
 router.register('categories', CategoryApi)
-router.register('menu_items', MenuItemApi)
+router.register('menu-items', MenuItemApi)
 router.register('orders', OrderApi)
-router.register('order_items', OrderItemApi)
-router.register('make_order', MakeOrderApi)
+router.register('order-items', OrderItemApi)
+router.register('make-order', MakeOrderApi)
 
 urlpatterns = [
     path('', include(router.urls)),

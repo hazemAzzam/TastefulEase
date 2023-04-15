@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hazem\\source\\repos\\TastefulEase\\Desktop\\TestefulEase\\TestefulEase\\TestefulEase.csproj": {}
+    "C:\\Users\\hazem\\source\\repos\\TastefulEase\\Django\\TestefulEase - Desktop\\TestefulEase\\TestefulEase.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hazem\\source\\repos\\TastefulEase\\Desktop\\TestefulEase\\TestefulEase\\TestefulEase.csproj": {
+    "C:\\Users\\hazem\\source\\repos\\TastefulEase\\Django\\TestefulEase - Desktop\\TestefulEase\\TestefulEase.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hazem\\source\\repos\\TastefulEase\\Desktop\\TestefulEase\\TestefulEase\\TestefulEase.csproj",
+        "projectUniqueName": "C:\\Users\\hazem\\source\\repos\\TastefulEase\\Django\\TestefulEase - Desktop\\TestefulEase\\TestefulEase.csproj",
         "projectName": "TestefulEase",
-        "projectPath": "C:\\Users\\hazem\\source\\repos\\TastefulEase\\Desktop\\TestefulEase\\TestefulEase\\TestefulEase.csproj",
+        "projectPath": "C:\\Users\\hazem\\source\\repos\\TastefulEase\\Django\\TestefulEase - Desktop\\TestefulEase\\TestefulEase.csproj",
         "packagesPath": "C:\\Users\\hazem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hazem\\source\\repos\\TastefulEase\\Desktop\\TestefulEase\\TestefulEase\\obj\\",
+        "outputPath": "C:\\Users\\hazem\\source\\repos\\TastefulEase\\Django\\TestefulEase - Desktop\\TestefulEase\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hazem\\AppData\\Roaming\\NuGet\\NuGet.Config",
