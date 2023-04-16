@@ -76,6 +76,7 @@
             this.passwordTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(179)))), ((int)(((byte)(112)))));
             this.passwordTxt.Location = new System.Drawing.Point(231, 113);
             this.passwordTxt.Name = "passwordTxt";
+            this.passwordTxt.PasswordChar = '*';
             this.passwordTxt.Size = new System.Drawing.Size(222, 28);
             this.passwordTxt.TabIndex = 3;
             // 

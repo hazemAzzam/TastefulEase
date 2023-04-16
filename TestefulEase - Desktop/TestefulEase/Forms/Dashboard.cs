@@ -43,6 +43,10 @@ namespace TestefulEase.Forms
             orderControl.Hide();
             paymentsControl.Hide();
             menuControl.Show();
+
+            button1.BackColor = Color.FromArgb(61, 33, 37);
+            button4.BackColor = Color.FromArgb(26, 25, 23);
+            button2.BackColor = Color.FromArgb(26, 25, 23);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -50,6 +54,10 @@ namespace TestefulEase.Forms
             orderControl.Hide();
             paymentsControl.Hide();
             menuControl.Show();
+
+            button1.BackColor = Color.FromArgb(61, 33, 37);
+            button2.BackColor = Color.FromArgb(26, 25, 23);
+            button4.BackColor = Color.FromArgb(26, 25, 23);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -57,6 +65,10 @@ namespace TestefulEase.Forms
             orderControl.Show();
             menuControl.Hide();
             paymentsControl.Hide();
+
+            button2.BackColor = Color.FromArgb(61, 33, 37);
+            button4.BackColor = Color.FromArgb(26, 25, 23);
+            button1.BackColor = Color.FromArgb(26, 25, 23);
         }
         int mouseX;
         int mouseY;
@@ -92,6 +104,10 @@ namespace TestefulEase.Forms
             orderControl.Hide();
             menuControl.Hide();
             paymentsControl.Show();
+
+            button4.BackColor = Color.FromArgb(61, 33, 37);
+            button1.BackColor = Color.FromArgb(26, 25, 23);
+            button2.BackColor = Color.FromArgb(26, 25, 23);
         }
     }
 }
