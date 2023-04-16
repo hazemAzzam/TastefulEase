@@ -100,21 +100,28 @@ class OrderSerializer(serializers.ModelSerializer):
 
     total_amount = serializers.ReadOnlyField()
     number_of_items = serializers.ReadOnlyField()
+    discount = serializers.ReadOnlyField()
+    total_amount_after = serializers.ReadOnlyField()
 
     class Meta:
         model = Order
         fields = '__all__'
 
     def create(self, validated_data):
-        order_items_info = validated_data.pop('order_items')
-        print(order_items_info)
-        order = Order.objects.create(**validated_data)
-        order.status = "Not Paied"
-        order_items = [OrderItem(order=order, **item) for item in order_items_info]
-        print(order_items)
-        OrderItem.objects.bulk_create(order_items)
-        order.customer.last_order = datetime.now
+        try:
+            order_items_info = validated_data.pop('order_items')
+            order = Order.objects.create(**validated_data)
+            order.status = "Not Paied"
+            order_items = [OrderItem(order=order, **item) for item in order_items_info]
 
+            OrderItem.objects.bulk_create(order_items)
+            order.customer.last_order = datetime.now
+        except:
+            order = Order.objects.create(**validated_data)
+            order.status = "Not Paied"
+            order.customer.last_order = datetime.now
+
+        
         return order
     
     def to_representation(self, instance):
@@ -124,32 +131,6 @@ class OrderSerializer(serializers.ModelSerializer):
         representation["order_items"] = order_items_serializer.data
         return representation
 
-
-class MakeOrderSerializer(serializers.ModelSerializer):
-    order_items_info = OrderItemsSerializer(source='order_items', many=True, read_only=True)
-    order_items = OrderItemsSerializer(many=True, write_only=True)
-    
-    class Meta:
-        model = Order
-        fields = ['customer', 'order_date', 'coupon', 'order_items', 'order_items_info']
-
-    def create(self, validated_data):
-        order_items_info = validated_data.pop('order_items')
-        print(order_items_info)
-        order = Order.objects.create(**validated_data)
-
-        order_items = [OrderItem(order=order, **item) for item in order_items_info]
-        print(order_items)
-        OrderItem.objects.bulk_create(order_items)
-
-        return order
-    
-    def to_representation(self, instance):
-        representation=super().to_representation(instance)
-        order_items = OrderItem.objects.filter(order=instance)
-        order_items_serializer = OrderItemsSerializer(order_items, many=True)
-        representation["order_items"] = order_items_serializer.data
-        return representation
     
 
 class PaymentSerializer(serializers.ModelSerializer):
@@ -161,7 +142,10 @@ class PaymentSerializer(serializers.ModelSerializer):
         order = validated_data["order"]
         order.status="Paied"
         order.save()
-        #order = Order.objects.get(order=validated_data["order"])
-        #order.status = "Paied"
-        #order.save()
         return super().create(validated_data)
+    
+
+class CouponSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Coupon
+        fields = '__all__'

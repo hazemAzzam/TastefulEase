@@ -30,6 +30,8 @@
         {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.couponTxt = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.orderPriceLbl = new System.Windows.Forms.Label();
@@ -46,9 +48,9 @@
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(23)))));
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(179)))), ((int)(((byte)(157)))));
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 59);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 88);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(497, 398);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(497, 369);
             this.flowLayoutPanel1.TabIndex = 0;
             this.flowLayoutPanel1.VisibleChanged += new System.EventHandler(this.flowLayoutPanel1_VisibleChanged);
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.OrderControl_Paint);
@@ -56,6 +58,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(23)))));
+            this.panel1.Controls.Add(this.couponTxt);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.orderPriceLbl);
@@ -66,8 +70,30 @@
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(179)))), ((int)(((byte)(157)))));
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(497, 59);
+            this.panel1.Size = new System.Drawing.Size(497, 88);
             this.panel1.TabIndex = 1;
+            // 
+            // couponTxt
+            // 
+            this.couponTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
+            this.couponTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.couponTxt.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.couponTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(179)))), ((int)(((byte)(112)))));
+            this.couponTxt.Location = new System.Drawing.Point(98, 59);
+            this.couponTxt.Name = "couponTxt";
+            this.couponTxt.Size = new System.Drawing.Size(119, 26);
+            this.couponTxt.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(179)))), ((int)(((byte)(157)))));
+            this.label2.Location = new System.Drawing.Point(28, 62);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 20);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Coupon:";
             // 
             // panel2
             // 
@@ -76,7 +102,7 @@
             this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(179)))), ((int)(((byte)(157)))));
             this.panel2.Location = new System.Drawing.Point(481, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(16, 59);
+            this.panel2.Size = new System.Drawing.Size(16, 88);
             this.panel2.TabIndex = 5;
             // 
             // button1
@@ -110,7 +136,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(179)))), ((int)(((byte)(157)))));
-            this.label3.Location = new System.Drawing.Point(6, 36);
+            this.label3.Location = new System.Drawing.Point(6, 35);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 20);
             this.label3.TabIndex = 2;
@@ -143,9 +169,9 @@
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(23)))));
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(179)))), ((int)(((byte)(157)))));
-            this.panel4.Location = new System.Drawing.Point(481, 59);
+            this.panel4.Location = new System.Drawing.Point(481, 88);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(16, 398);
+            this.panel4.Size = new System.Drawing.Size(16, 369);
             this.panel4.TabIndex = 4;
             // 
             // OrderControl
@@ -174,5 +200,7 @@
         private Button button1;
         private Panel panel4;
         private Panel panel2;
+        private Label label2;
+        private TextBox couponTxt;
     }
 }

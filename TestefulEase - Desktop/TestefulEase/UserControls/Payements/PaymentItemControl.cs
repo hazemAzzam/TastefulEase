@@ -25,7 +25,9 @@ namespace TestefulEase.UserControls.Payements
         {
             orderDateLbl.Text = orderItem.order_date.ToString();
             numberOfItemsLbl.Text = orderItem.number_of_items.ToString();
-            totalPaymentsLbl.Text = orderItem.total_amount.ToString();
+            totalBeforeDiscount.Text = orderItem.total_amount.ToString();
+            totalAfterDiscount.Text = orderItem.total_amount_after.ToString();
+            couponDiscountLbl.Text = (orderItem.discount * 100).ToString() + "%";
 
             if (orderItem.status == "Paied")
             {

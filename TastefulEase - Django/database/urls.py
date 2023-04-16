@@ -10,7 +10,7 @@ router.register('menu-items', MenuItemApi)
 router.register('orders', OrderApi)
 router.register('order-items', OrderItemApi)
 router.register('Payments', PaymentApi)
-
+router.register("Coupons", CouponApi)
 
 urlpatterns = [
     path('', include(router.urls)),

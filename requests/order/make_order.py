@@ -8,8 +8,8 @@ headers = {
 
 data = {
     "order_date": datetime.now().isoformat(),
-    "customer": 3,
-    "coupon": None,
+    "customer": 1,
+    "coupon": 2,
     "order_items": [
         {
             "menu_item": 1,
@@ -19,5 +19,5 @@ data = {
 }
 
 
-res = requests.post("http://127.0.0.1:8000/api/make_order/", data=json.dumps(data), headers=headers)
-print(res.content)
+res = requests.post("http://127.0.0.1:8000/api/orders/", data=json.dumps(data), headers=headers)
+print(res.status_code)

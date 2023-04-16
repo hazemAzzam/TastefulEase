@@ -15,6 +15,9 @@ namespace TestefulEase.Classes
         public int total_amount { get; set; }
         public int number_of_items { get; set; }
         public string status { get; set; }
+        public string coupon { get; set; }  
+        public float discount { get; set; }
+        public float total_amount_after { get; set; }
 
         public Order()
         {

@@ -40,6 +40,8 @@ namespace TestefulEase.UserControls
             Dashboard.order.order_date = DateTime.Now;
             Dashboard.order.customer = Dashboard.customer.id;
 
+            Dashboard.order.coupon = couponTxt.Text;
+
             string json = JsonSerializer.Serialize(Dashboard.order);
 
             var responseBody = await authService.SendPostRequest("http://127.0.0.1:8000/api/orders/", json);
@@ -50,6 +52,10 @@ namespace TestefulEase.UserControls
                 orderDateLbl.Text = "";
                 orderPriceLbl.Text = "";
                 flowLayoutPanel1.Controls.Clear();
+            }
+            else
+            {
+                MessageBox.Show(responseBody.StatusCode.ToString());
             }
 
         }

@@ -27,10 +27,14 @@ class OrderItemApi(viewsets.ModelViewSet):
     queryset = OrderItem.objects.all()
     serializer_class = OrderItemsSerializer
 
-class MakeOrderApi(viewsets.ModelViewSet):
-    queryset = Order.objects.all()
-    serializer_class = MakeOrderSerializer
+#class MakeOrderApi(viewsets.ModelViewSet):
+#    queryset = Order.objects.all()
+#    serializer_class = MakeOrderSerializer
 
 class PaymentApi(viewsets.ModelViewSet):
     queryset = Payment.objects.all()
     serializer_class = PaymentSerializer
+
+class CouponApi(viewsets.ModelViewSet):
+    queryset = Coupon.objects.all()
+    serializer_class = CouponSerializer

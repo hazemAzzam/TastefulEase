@@ -34,11 +34,15 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.orderDateLbl = new System.Windows.Forms.Label();
             this.numberOfItemsLbl = new System.Windows.Forms.Label();
-            this.totalPaymentsLbl = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.couponDiscountLbl = new System.Windows.Forms.Label();
+            this.totalBeforeDiscount = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.totalAfterDiscount = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // panel1
@@ -80,7 +84,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(61, 30);
+            this.label1.Location = new System.Drawing.Point(87, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 21);
             this.label1.TabIndex = 5;
@@ -89,25 +93,16 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 72);
+            this.label2.Location = new System.Drawing.Point(46, 47);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(131, 21);
             this.label2.TabIndex = 6;
             this.label2.Text = "Number of Items:";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(42, 117);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 21);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Total Payment:";
-            // 
             // orderDateLbl
             // 
             this.orderDateLbl.AutoSize = true;
-            this.orderDateLbl.Location = new System.Drawing.Point(157, 32);
+            this.orderDateLbl.Location = new System.Drawing.Point(185, 21);
             this.orderDateLbl.Name = "orderDateLbl";
             this.orderDateLbl.Size = new System.Drawing.Size(90, 21);
             this.orderDateLbl.TabIndex = 8;
@@ -116,42 +111,91 @@
             // numberOfItemsLbl
             // 
             this.numberOfItemsLbl.AutoSize = true;
-            this.numberOfItemsLbl.Location = new System.Drawing.Point(157, 72);
+            this.numberOfItemsLbl.Location = new System.Drawing.Point(185, 47);
             this.numberOfItemsLbl.Name = "numberOfItemsLbl";
             this.numberOfItemsLbl.Size = new System.Drawing.Size(90, 21);
             this.numberOfItemsLbl.TabIndex = 9;
             this.numberOfItemsLbl.Text = "Order Date:";
             // 
-            // totalPaymentsLbl
-            // 
-            this.totalPaymentsLbl.AutoSize = true;
-            this.totalPaymentsLbl.Location = new System.Drawing.Point(157, 117);
-            this.totalPaymentsLbl.Name = "totalPaymentsLbl";
-            this.totalPaymentsLbl.Size = new System.Drawing.Size(90, 21);
-            this.totalPaymentsLbl.TabIndex = 10;
-            this.totalPaymentsLbl.Text = "Order Date:";
-            // 
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(399, 32);
+            this.button1.Location = new System.Drawing.Point(281, 92);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 106);
+            this.button1.Size = new System.Drawing.Size(248, 46);
             this.button1.TabIndex = 11;
             this.button1.Text = "Pay";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(44, 76);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(133, 21);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Coupon Discount:";
+            // 
+            // couponDiscountLbl
+            // 
+            this.couponDiscountLbl.AutoSize = true;
+            this.couponDiscountLbl.Location = new System.Drawing.Point(185, 76);
+            this.couponDiscountLbl.Name = "couponDiscountLbl";
+            this.couponDiscountLbl.Size = new System.Drawing.Size(90, 21);
+            this.couponDiscountLbl.TabIndex = 13;
+            this.couponDiscountLbl.Text = "Order Date:";
+            // 
+            // totalBeforeDiscount
+            // 
+            this.totalBeforeDiscount.AutoSize = true;
+            this.totalBeforeDiscount.Location = new System.Drawing.Point(185, 105);
+            this.totalBeforeDiscount.Name = "totalBeforeDiscount";
+            this.totalBeforeDiscount.Size = new System.Drawing.Size(90, 21);
+            this.totalBeforeDiscount.TabIndex = 15;
+            this.totalBeforeDiscount.Text = "Order Date:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(18, 104);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(159, 21);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Total Before Discount:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(29, 129);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(148, 21);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Total After Discount:";
+            // 
+            // totalAfterDiscount
+            // 
+            this.totalAfterDiscount.AutoSize = true;
+            this.totalAfterDiscount.Location = new System.Drawing.Point(185, 129);
+            this.totalAfterDiscount.Name = "totalAfterDiscount";
+            this.totalAfterDiscount.Size = new System.Drawing.Size(90, 21);
+            this.totalAfterDiscount.TabIndex = 17;
+            this.totalAfterDiscount.Text = "Order Date:";
             // 
             // PaymentItemControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(23)))));
+            this.Controls.Add(this.totalAfterDiscount);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.totalBeforeDiscount);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.couponDiscountLbl);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.totalPaymentsLbl);
             this.Controls.Add(this.numberOfItemsLbl);
             this.Controls.Add(this.orderDateLbl);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel4);
@@ -177,10 +221,14 @@
         private Panel panel4;
         private Label label1;
         private Label label2;
-        private Label label3;
         private Label orderDateLbl;
         private Label numberOfItemsLbl;
-        private Label totalPaymentsLbl;
         private Button button1;
+        private Label label4;
+        private Label couponDiscountLbl;
+        private Label totalBeforeDiscount;
+        private Label label6;
+        private Label label3;
+        private Label totalAfterDiscount;
     }
 }
