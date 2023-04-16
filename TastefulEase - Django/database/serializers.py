@@ -94,10 +94,31 @@ class OrderItemsSerializer(serializers.ModelSerializer):
         fields = ['id', 'menu_item', 'quantity', 'order']
 
 class OrderSerializer(serializers.ModelSerializer):
+    order_items_info = OrderItemsSerializer(source='order_items', many=True, read_only=True)
+    order_items = OrderItemsSerializer(many=True, write_only=True, required=False)
+
     total_amount = serializers.ReadOnlyField()
     class Meta:
         model = Order
         fields = '__all__'
+
+    def create(self, validated_data):
+        order_items_info = validated_data.pop('order_items')
+        print(order_items_info)
+        order = Order.objects.create(**validated_data)
+
+        order_items = [OrderItem(order=order, **item) for item in order_items_info]
+        print(order_items)
+        OrderItem.objects.bulk_create(order_items)
+
+        return order
+    
+    def to_representation(self, instance):
+        representation=super().to_representation(instance)
+        order_items = OrderItem.objects.filter(order=instance)
+        order_items_serializer = OrderItemsSerializer(order_items, many=True)
+        representation["order_items"] = order_items_serializer.data
+        return representation
 
 
 class MakeOrderSerializer(serializers.ModelSerializer):

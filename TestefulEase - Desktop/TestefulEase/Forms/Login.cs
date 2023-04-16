@@ -30,22 +30,31 @@ namespace TestefulEase.Forms
                 {"phone_number", phoneNumberTxt.Text },
                 {"password", passwordTxt.Text }
             };
-            var responseContent = await authService.SendPostRequestAsync("http://127.0.0.1:8000/api/login/", data);
-
+            var responseContent = "";
+            try
+            {
+                responseContent = await authService.SendPostRequestAsync("http://127.0.0.1:8000/api/login/", data);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Server is not responding...");
+                return;
+                
+            }
             if (responseContent != null)
             {
                 var customer = JsonConvert.DeserializeObject<Customer>(responseContent);
-                
+
                 Dashboard dashboard = new Dashboard();
 
                 Dashboard.customer = customer;
-                
+
                 this.Hide();
                 dashboard.Show();
             }
             else
             {
-                MessageBox.Show("null");
+                MessageBox.Show("Account not found.");
             }
         }
     }

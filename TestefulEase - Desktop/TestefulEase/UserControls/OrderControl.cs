@@ -41,7 +41,7 @@ namespace TestefulEase.UserControls
 
             string json = JsonSerializer.Serialize(Dashboard.order);
             var client = new HttpClient();
-            string url = "http://127.0.0.1:8000/api/make_order/";
+            string url = "http://127.0.0.1:8000/api/orders/";
 
            
             var request = new HttpRequestMessage(HttpMethod.Post, url);

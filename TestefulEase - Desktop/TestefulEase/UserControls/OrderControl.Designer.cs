@@ -36,7 +36,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.orderDateLbl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -139,16 +138,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Order Date:";
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(23)))));
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(179)))), ((int)(((byte)(157)))));
-            this.panel3.Location = new System.Drawing.Point(0, 441);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(497, 16);
-            this.panel3.TabIndex = 3;
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(23)))));
@@ -156,14 +145,13 @@
             this.panel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(179)))), ((int)(((byte)(157)))));
             this.panel4.Location = new System.Drawing.Point(481, 59);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(16, 382);
+            this.panel4.Size = new System.Drawing.Size(16, 398);
             this.panel4.TabIndex = 4;
             // 
             // OrderControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Name = "OrderControl";
@@ -184,7 +172,6 @@
         private Label orderPriceLbl;
         private Label label3;
         private Button button1;
-        private Panel panel3;
         private Panel panel4;
         private Panel panel2;
     }

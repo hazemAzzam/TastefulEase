@@ -45,7 +45,7 @@
             this.textBox1.Location = new System.Drawing.Point(221, 65);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(338, 102);
+            this.textBox1.Size = new System.Drawing.Size(330, 102);
             this.textBox1.TabIndex = 6;
             // 
             // itemPictureBox
@@ -86,7 +86,7 @@
             this.Controls.Add(this.itemPictureBox);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(179)))), ((int)(((byte)(157)))));
             this.Name = "OrderMenuItem";
-            this.Size = new System.Drawing.Size(568, 246);
+            this.Size = new System.Drawing.Size(551, 246);
             this.Load += new System.EventHandler(this.OrderMenuItem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.itemPictureBox)).EndInit();
             this.ResumeLayout(false);

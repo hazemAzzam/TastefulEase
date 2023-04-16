@@ -22,7 +22,7 @@ namespace TestefulEase.UserControls
 
         private async void MenuControl_Load(object sender, EventArgs e)
         {
-            var responseContent = await authService.GetRquestAsync("http://127.0.0.1:8000/api/menu_items/");
+            var responseContent = await authService.GetRquestAsync("http://127.0.0.1:8000/api/menu-items/");
 
             if (responseContent != null)
             {
