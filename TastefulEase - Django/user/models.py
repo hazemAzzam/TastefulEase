@@ -21,6 +21,7 @@ class Customer(AbstractUser):
     first_name = models.CharField(max_length=50, null=False)
     last_name = models.CharField(max_length=50, null=False)
     phone_number = models.CharField(max_length=11, null=False, unique=True)
+    last_order = models.DateTimeField(null=True)
 
     USERNAME_FIELD = 'phone_number'
 

@@ -8,14 +8,17 @@ namespace TestefulEase.Classes
 {
     public class Order
     {
+        public int id { get; set; } 
         public int customer { get; set; }
         public DateTime order_date { get; set; }
         public OrderItem[] order_items { get; set; }
-        public int total_price;
+        public int total_amount { get; set; }
+        public int number_of_items { get; set; }
+        public string status { get; set; }
 
         public Order()
         {
-            total_price = 0;
+            total_amount = 0;
             order_items = new OrderItem[0];
         }
         public void add_item(OrderItem orderItem)

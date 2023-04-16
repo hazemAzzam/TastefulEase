@@ -19,6 +19,7 @@ namespace TestefulEase.Forms
 
         MenuControl menuControl = new MenuControl();
         OrderControl orderControl = new OrderControl();
+        public static PaymentsControl paymentsControl = new PaymentsControl();
 
         public Dashboard()
         {
@@ -28,25 +29,26 @@ namespace TestefulEase.Forms
 
             menuControl.Dock = DockStyle.Fill;
             orderControl.Dock = DockStyle.Fill;
+            paymentsControl.Dock = DockStyle.Fill;
 
             container.Controls.Add(menuControl);
             container.Controls.Add(orderControl);
-
-            
+            container.Controls.Add(paymentsControl);            
         }
 
         private void FixDashBoard_Load(object sender, EventArgs e)
         {
             customerNameLbl.Text = "Welcome " + customer.first_name + " " + customer.last_name;
             
-            orderControl.Hide();         
+            orderControl.Hide();
+            paymentsControl.Hide();
             menuControl.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             orderControl.Hide();
-
+            paymentsControl.Hide();
             menuControl.Show();
         }
 
@@ -54,6 +56,7 @@ namespace TestefulEase.Forms
         {
             orderControl.Show();
             menuControl.Hide();
+            paymentsControl.Hide();
         }
         int mouseX;
         int mouseY;
@@ -82,6 +85,13 @@ namespace TestefulEase.Forms
         private void button3_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            orderControl.Hide();
+            menuControl.Hide();
+            paymentsControl.Show();
         }
     }
 }

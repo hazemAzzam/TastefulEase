@@ -31,6 +31,22 @@ namespace TestefulEase.Classes
             }
         }
 
+        public async Task<ApiResponse> SendPostRequest(string url, string data)
+        {
+            var client = new HttpClient();
+
+            var request = new HttpRequestMessage(HttpMethod.Post, url);
+            request.Content = new StringContent(data, Encoding.UTF8, "application/json");
+
+            // Send the request and get the response
+            HttpResponseMessage response = await client.SendAsync(request);
+            int statusCode = (int)response.StatusCode;
+            string responseBody = await response.Content.ReadAsStringAsync();
+
+            return new ApiResponse { StatusCode = statusCode, Content = responseBody };
+        }
+
+
         public async Task<string> GetRquestAsync(string url)
         {
             var response = await httpClient.GetAsync(url);

@@ -3,6 +3,7 @@ from rest_framework import serializers
 from .models import *
 from user.models import Customer
 import json
+from datetime import datetime
 
 class DeliveryAddressSerializer(serializers.ModelSerializer):
     class Meta:
@@ -98,6 +99,8 @@ class OrderSerializer(serializers.ModelSerializer):
     order_items = OrderItemsSerializer(many=True, write_only=True, required=False)
 
     total_amount = serializers.ReadOnlyField()
+    number_of_items = serializers.ReadOnlyField()
+
     class Meta:
         model = Order
         fields = '__all__'
@@ -106,10 +109,11 @@ class OrderSerializer(serializers.ModelSerializer):
         order_items_info = validated_data.pop('order_items')
         print(order_items_info)
         order = Order.objects.create(**validated_data)
-
+        order.status = "Not Paied"
         order_items = [OrderItem(order=order, **item) for item in order_items_info]
         print(order_items)
         OrderItem.objects.bulk_create(order_items)
+        order.customer.last_order = datetime.now
 
         return order
     
@@ -146,3 +150,18 @@ class MakeOrderSerializer(serializers.ModelSerializer):
         order_items_serializer = OrderItemsSerializer(order_items, many=True)
         representation["order_items"] = order_items_serializer.data
         return representation
+    
+
+class PaymentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Payment
+        fields = '__all__'
+
+    def create(self, validated_data):
+        order = validated_data["order"]
+        order.status="Paied"
+        order.save()
+        #order = Order.objects.get(order=validated_data["order"])
+        #order.status = "Paied"
+        #order.save()
+        return super().create(validated_data)

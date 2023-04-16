@@ -12,6 +12,7 @@ using TestefulEase.Classes;
 using System.Text.Json;
 using Flurl.Http;
 using TestefulEase.Forms;
+using TestefulEase.UserControls.Payements;
 
 namespace TestefulEase.UserControls
 {
@@ -36,20 +37,20 @@ namespace TestefulEase.UserControls
         private async void button1_Click(object sender, EventArgs e)
         {
 
-            Dashboard.order.order_date= DateTime.Now;
+            Dashboard.order.order_date = DateTime.Now;
             Dashboard.order.customer = Dashboard.customer.id;
 
             string json = JsonSerializer.Serialize(Dashboard.order);
-            var client = new HttpClient();
-            string url = "http://127.0.0.1:8000/api/orders/";
 
-           
-            var request = new HttpRequestMessage(HttpMethod.Post, url);
-            request.Content = new StringContent(json, Encoding.UTF8, "application/json");
+            var responseBody = await authService.SendPostRequest("http://127.0.0.1:8000/api/orders/", json);
 
-            // Send the request and get the response
-            HttpResponseMessage response = await client.SendAsync(request);
-            string responseBody = await response.Content.ReadAsStringAsync();
+            if (responseBody.StatusCode == 201)
+            {
+                Dashboard.order = new Order();
+                orderDateLbl.Text = "";
+                orderPriceLbl.Text = "";
+                flowLayoutPanel1.Controls.Clear();
+            }
 
         }
 

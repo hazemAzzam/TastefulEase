@@ -33,7 +33,7 @@ namespace TestefulEase.UserControls
         private void button2_Click(object sender, EventArgs e)
         {
             orderItem.quantity++;
-            Dashboard.order.total_price += orderItem.menu_item_object.price;
+            Dashboard.order.total_amount += orderItem.menu_item_object.price;
 
             
         }
@@ -41,7 +41,7 @@ namespace TestefulEase.UserControls
         private void button1_Click(object sender, EventArgs e)
         {
             orderItem.quantity--;
-            Dashboard.order.total_price -= orderItem.menu_item_object.price;
+            Dashboard.order.total_amount -= orderItem.menu_item_object.price;
 
 
         }
