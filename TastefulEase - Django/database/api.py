@@ -2,6 +2,7 @@ from rest_framework import viewsets
 from .serializers import *
 from .models import *
 from django.db.models import Case, CharField, Count, Value, When
+from .filters import *
 
 class CustomerApi(viewsets.ModelViewSet):
     queryset = Customer.objects.all()
@@ -18,6 +19,7 @@ class CategoryApi(viewsets.ModelViewSet):
 class MenuItemApi(viewsets.ModelViewSet):
     queryset = MenuItem.objects.all()
     serializer_class = MenuItemSerializer
+    filterset_class = Menu_Item_Filter
 
 class OrderApi(viewsets.ModelViewSet):
     queryset = Order.objects.all().order_by("status")
