@@ -65,28 +65,31 @@ class CategorySerializer(serializers.ModelSerializer):
         
 class MenuItemSerializer(serializers.ModelSerializer):
     categories_info = CategorySerializer(source="categories", many=True, read_only=True)
-    categories = CategorySerializer(
-        many=True,
-        write_only=True,
-    )
+    categories = serializers.PrimaryKeyRelatedField(queryset=Category.objects.all(), write_only=True, many=True)
     
     class Meta:
         model = MenuItem
         fields = ['id', 'name', 'description', 'price', 'image', 'categories_info', 'categories']
 
-    def create(self, validated_data):
-        categories_data = validated_data.pop('categories', [])
-        categories = []
-
-        for category_data in categories_data:
-            category, created = Category.objects.get_or_create(name=category_data['name'])
-            categories.append(category)
-
-        menu_item, created = MenuItem.objects.get_or_create(**validated_data)
-        if created:
-            menu_item.categories.set(categories)
-        
-        return menu_item
+    def to_representation(self, instance):
+        data= super().to_representation(instance)
+        if 'categories_info' in data:
+            data['categories'] = data['categories_info']
+            del data['categories_info']
+        return data
+    #def create(self, validated_data):
+    #    #categories_data = validated_data.pop('categories', [])
+    #    #categories = []
+#
+    #    #for category_data in categories_data:
+    #    #    category, created = Category.objects.get_or_create(name=category_data['name'])
+    #    #    categories.append(category)
+#
+    #    menu_item, created = MenuItem.objects.get_or_create(**validated_data)
+    #    #if created:
+    #    #    menu_item.categories.set(categories)
+    #    
+    #    return menu_item
 
 class OrderItemsSerializer(serializers.ModelSerializer):
     order = serializers.PrimaryKeyRelatedField(queryset=Order.objects.all(), required=False, write_only=True)

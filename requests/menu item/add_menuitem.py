@@ -6,10 +6,10 @@ headers = {
 }
 
 data = {
-        "name": "Twister Chilla Box",
-        "description": "3 twister sandwiches, 6 pieces of chicken, family french fries and pepsi liter.",
-        "price": 385,
-        "image": "https://kfcprodnecmsimage.azureedge.net/cmsimages/egy/desktop/imagestemp/1-Combo.png",
+        "name": "Mega Rizo",
+        "description": "1 Rizo + 3 pcs of Strips + Sauce",
+        "price": 110,
+        "image": "https://kfcprodnecmsimage.azureedge.net/cmsimages/egy/desktop/imagestemp/148-Combo.png",
         "categories": [
             {"name": "Burgers"},
             {"name": "Classics"}
