@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-![video](TestefulEase - React/2023-04-24 16-21-59.mp4)
+![alt video](TestefulEase - React/2023-04-24 16-21-59.mp4)
 
 ### `npm start`
 
