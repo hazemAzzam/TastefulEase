@@ -5,8 +5,10 @@ from django.db import models
 
 class CustomerManager(BaseUserManager):
     def create_user(self, phone_number, password=None, **extra_fields):
+       
         user = self.model(phone_number=phone_number, **extra_fields)
         user.set_password(password)
+
         user.save(using=self._db)
         return user
     
@@ -18,15 +20,16 @@ class CustomerManager(BaseUserManager):
 
 
 class Customer(AbstractUser):
+    username = None
     first_name = models.CharField(max_length=50, null=False)
     last_name = models.CharField(max_length=50, null=False)
     phone_number = models.CharField(max_length=11, null=False, unique=True)
     last_order = models.DateTimeField(null=True)
 
-    USERNAME_FIELD = 'phone_number'
+    USERNAME_FIELD = "phone_number"
 
     REQUIRED_FIELDS = []
     objects = CustomerManager()
 
     def __str__(self):
-        return f"{self.first_name} {self.last_name}"
+        return f"{self.phone_number}"

@@ -20,7 +20,7 @@ class MenuItem(models.Model):
     
 class Order(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
-    order_date = models.DateTimeField(verbose_name="Order Date")
+    order_date = models.DateTimeField(verbose_name="Order Date", null=True)
     coupon = models.ForeignKey("Coupon", on_delete=models.CASCADE, null=True)
     status = models.CharField(max_length=10, default="Not Paied", null=True, blank=True)
 
