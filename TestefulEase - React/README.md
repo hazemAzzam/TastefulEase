@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-![Movies](Movies.mp4)
+
 
 ![Video](TestefulEase - React/2023-04-24 16-21-59.mp4)
 
