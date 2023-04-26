@@ -117,7 +117,7 @@ class OrderSerializer(serializers.ModelSerializer):
         
         order.status = "Not Paied"
 
-        order.order_date - datetime.now
+        order.order_date = datetime.now
         order.customer.last_order = datetime.now
         order.save()
         return order
