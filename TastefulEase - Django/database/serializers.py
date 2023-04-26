@@ -92,7 +92,6 @@ class OrderItemsSerializer(serializers.ModelSerializer):
         fields = ['id', 'menu_item', 'quantity', 'order']
 
 class OrderSerializer(serializers.ModelSerializer):
-    order_items_info = OrderItemsSerializer(source='order_items', many=True, read_only=True)
     order_items = OrderItemsSerializer(many=True, write_only=True, required=False)
 
     status = serializers.ReadOnlyField()
@@ -104,9 +103,10 @@ class OrderSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Order
-        fields = ['customer', 'coupon', 'status', 'order_date', 'number_of_items', 'discount', 'total_amount', 'total_amount_after','order_items', 'order_items_info']
+        fields = ['id', 'customer', 'coupon', 'status', 'order_date', 'number_of_items', 'discount', 'total_amount', 'total_amount_after','order_items']
 
     def create(self, validated_data):
+
         try:
             order_items_info = validated_data.pop('order_items')
             order = Order.objects.create(**validated_data)
@@ -117,8 +117,9 @@ class OrderSerializer(serializers.ModelSerializer):
         
         order.status = "Not Paied"
 
-        order.order_date = datetime.now
-        order.customer.last_order = datetime.now
+        order.order_date = datetime.now()
+        order.customer.last_order = datetime.now()
+
         order.save()
         return order
     
@@ -137,8 +138,10 @@ class PaymentSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
     def create(self, validated_data):
+        print(validated_data)
         order = validated_data["order"]
         order.status="Paied"
+        
         order.save()
         return super().create(validated_data)
     

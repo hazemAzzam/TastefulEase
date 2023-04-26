@@ -40,6 +40,7 @@ namespace TestefulEase.UserControls.Payements
             Payment payment = new Payment();
             payment.order = orderItem.id;
             string json = JsonSerializer.Serialize(payment);
+            
             var response = await authService.SendPostRequest("http://127.0.0.1:8000/api/Payments/", json);
             if (response.StatusCode == 201)
             {

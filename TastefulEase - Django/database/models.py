@@ -54,7 +54,7 @@ class Order(models.Model):
             return 0
     
     def __str__(self):
-        return f"{self.customer} - {self.total_amount}$ - {self.order_date}"
+        return f"{self.customer} - {self.total_amount}$ - {self.order_date} ({self.status})"
 
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
