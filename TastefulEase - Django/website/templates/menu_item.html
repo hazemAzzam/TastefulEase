@@ -1,0 +1,42 @@
+<div class="menu-item">
+    <div class="menu-item-image">
+        <img src="{{ menu_item.image }}" alt="Menu Item Image">
+    </div>
+    <div class="menu-item-details">
+        <h3>{{ menu_item.name }}</h3>
+        <p class="description">{{ menu_item.description }}</p>
+        <h4>Price: {{ menu_item.price }}</h4>
+    </div>
+    <div class="menu-item-action">
+        <button type="submit" class="add-to-cart-button" data-id="{{ menu_item.id }}" onclick='addToCart(event, "{{ menu_item }}")'>Add to Cart</button>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+    function addToCart(event, menuItem) {
+        event.preventDefault();
+
+        // Send an AJAX request to add the item to the cart
+        $.ajax({
+            type: 'POST',
+            url: '.',  // Update with your Django URL for adding items to the cart
+            data: {
+                menu_item: menuItem,
+                csrfmiddlewaretoken: '{{ csrf_token }}'  // Include the CSRF token
+            },
+            success: function(response) {
+                // Handle the response, such as displaying a success message
+                updateCartCount(response.number_of_items);
+            },
+            error: function(xhr, status, error) {
+                // Handle any errors
+                console.log(error);
+            }
+        });
+    }
+    function updateCartCount(count) {
+        var cartCountElement = document.getElementById('cart-count');
+        cartCountElement.textContent = count;
+    }
+</script>
